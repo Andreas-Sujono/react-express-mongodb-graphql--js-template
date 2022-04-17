@@ -4,6 +4,14 @@ import {
   createUser,
   updateUser,
   hardDeleteUserById,
+  getOneUser,
 } from './userBaseService';
 
-export { getUsers, getOneUserById, createUser, updateUser, hardDeleteUserById };
+export {
+  getUsers,
+  getOneUserById,
+  getOneUser,
+  createUser,
+  updateUser,
+  hardDeleteUserById,
+};

@@ -14,6 +14,12 @@ export async function getOneUserById(id) {
   return user;
 }
 
+export async function getOneUser(condition = {}) {
+  const user = await UserDb.findOne(condition);
+  if (user) user.hashed_password = '**CONFIDENTIAL**';
+  return user;
+}
+
 export async function createUser(data) {
   return UserDb.insert(data);
 }

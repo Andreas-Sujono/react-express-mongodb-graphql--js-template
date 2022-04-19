@@ -1,0 +1,38 @@
+type User {
+  id: ID
+  full_name: String
+  email: String
+  hashed_password: String
+  profession: String
+  description: String
+  profile_image: String
+  phone_number: String
+  role: String
+  account_type: String
+  is_logged_in: String
+  is_active: String
+  otp_code: String
+  otp_expires_at: String
+  last_login_at: String
+  email_verified_at: String
+  phone_number_verified_at: String
+  created_at: String
+  updated_at: String
+  deleted_at: String
+}
+
+type Query {
+  user(id: String!): User
+  users: [User!]!
+}
+
+input CreateUserData {
+  full_name: String!
+  hashed_password: String!
+  email: String!
+  description: String!
+  phone_number: String
+}
+type Mutation {
+  createUser(data: CreateUserData!): User
+}

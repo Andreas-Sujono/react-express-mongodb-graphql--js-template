@@ -13,10 +13,16 @@ env.config();
 const app = express();
 
 // Allow Cross-Origin requests
-app.use(cors());
+app.use(
+  cors({
+    origin: true, //This will just copy the request origin and put it in response
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
-// Set security HTTP headers
-app.use(helmet());
+// // Set security HTTP headers
+// app.use(helmet()); //enable in production only, it disables the graphiql interface
 
 // Limit request from the same API
 const limiter = rateLimit({
